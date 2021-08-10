@@ -1,12 +1,13 @@
-"""This script generates the XAP protocol generated source to be compiled into QMK.
+"""This script generates the XAP protocol generated sources to be compiled into QMK firmware.
 """
 from milc import cli
 
 from qmk.path import normpath
-from qmk.xap.gen_firmware.generator import generate_inline, generate_header
+from qmk.xap.gen_firmware.inline_generator import generate_inline
+from qmk.xap.gen_firmware.header_generator import generate_header
 
 
-@cli.argument('-o', '--output', arg_only=True, type=normpath, help='File to write to')
+@cli.argument('-o', '--output', type=normpath, help='File to write to')
 @cli.subcommand('Generates the XAP protocol include.', hidden=False if cli.config.user.developer else True)
 def xap_generate_qmk_inc(cli):
     """Generates the XAP protocol inline codegen file, generated during normal build.
@@ -14,7 +15,7 @@ def xap_generate_qmk_inc(cli):
     generate_inline(cli.args.output)
 
 
-@cli.argument('-o', '--output', arg_only=True, type=normpath, help='File to write to')
+@cli.argument('-o', '--output', type=normpath, help='File to write to')
 @cli.subcommand('Generates the XAP protocol include.', hidden=False if cli.config.user.developer else True)
 def xap_generate_qmk_h(cli):
     """Generates the XAP protocol header file, generated during normal build.

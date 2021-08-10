@@ -67,6 +67,7 @@ subcommands = [
     'qmk.cli.pyformat',
     'qmk.cli.pytest',
     'qmk.cli.xap.generate_docs',
+    'qmk.cli.xap.generate_json',
     'qmk.cli.xap.generate_qmk',
 ]
 
