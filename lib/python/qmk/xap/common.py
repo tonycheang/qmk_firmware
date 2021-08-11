@@ -1,7 +1,9 @@
 """This script handles the XAP protocol data files.
 """
-from typing import OrderedDict
+import re
 import hjson
+from typing import OrderedDict
+
 from qmk.constants import QMK_FIRMWARE
 
 

@@ -21,7 +21,7 @@
                         Dynamic Keymap subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
                     returns_constant: XAP_ROUTE_DYNAMIC_KEYMAP_CAPABILITIES
-                    return_type: u32/bitmask
+                    return_type: u32/capabilities
                 }
             }
         }
@@ -45,7 +45,7 @@
                         Dynamic Encoders subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
                     returns_constant: XAP_ROUTE_DYNAMIC_ENCODER_CAPABILITIES
-                    return_type: u32/bitmask
+                    return_type: u32/capabilities
                 }
             }
         }
@@ -69,7 +69,7 @@
                         Lighting subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
                     returns_constant: XAP_ROUTE_LIGHTING_CAPABILITIES
-                    return_type: u32/bitmask
+                    return_type: u32/capabilities
                 }
             }
         }

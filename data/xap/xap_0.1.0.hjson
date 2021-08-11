@@ -112,7 +112,7 @@
                         XAP subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
                     returns_constant: XAP_ROUTE_XAP_CAPABILITIES
-                    return_type: u32/bitmask
+                    return_type: u32/capabilities
                 }
                 0x02: {
                     type: command
@@ -123,7 +123,7 @@
                         XAP protocol subsystem query. Each bit should be considered as a "usable" subsystem. For example, checking `(value & (1 << XAP_ROUTE_QMK) != 0)` means the QMK subsystem is enabled and available for querying.
                         '''
                     returns_constant: XAP_CAPABILITIES
-                    return_type: u32/bitmask
+                    return_type: u32/capabilities
                 }
             }
         },
@@ -162,7 +162,7 @@
                         QMK subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
                     returns_constant: XAP_ROUTE_QMK_CAPABILITIES
-                    return_type: u32/bitmask
+                    return_type: u32/capabilities
                 }
                 0x02: {
                     type: command
@@ -190,6 +190,12 @@
                             type: u64
                             name: QMK Unique Identifier
                         }
+                    ]
+                    returns_constant: [
+                        VENDOR_ID,
+                        PRODUCT_ID,
+                        DEVICE_VER,
+                        XAP_KEYBOARD_IDENTIFIER
                     ]
                 }
             }
