@@ -111,8 +111,7 @@
                         '''
                         XAP subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
-                    always_present: true
-                    returns_getter: true
+                    returns_constant: XAP_ROUTE_XAP_CAPABILITIES
                     return_type: u32/bitmask
                 }
                 0x02: {
@@ -121,10 +120,9 @@
                     define: SUBSYSTEM_QUERY
                     description:
                         '''
-                        XAP protocol subsystem query. Each bit should be considered as a "usable" subsystem. For example, checking `(value & (1 << SUBSYSTEM_QMK) != 0)` means the QMK subsystem is enabled and available for querying.
+                        XAP protocol subsystem query. Each bit should be considered as a "usable" subsystem. For example, checking `(value & (1 << XAP_ROUTE_QMK) != 0)` means the QMK subsystem is enabled and available for querying.
                         '''
-                    always_present: true
-                    returns_getter: true
+                    returns_constant: XAP_CAPABILITIES
                     return_type: u32/bitmask
                 }
             }
@@ -152,7 +150,6 @@
                         * Response:
                             * `u32` value.
                         '''
-                    always_present: true
                     returns_constant: QMK_BCD_VERSION
                     return_type: u32/bcd-version
                 }
@@ -164,8 +161,7 @@
                         '''
                         QMK subsystem capabilities query. Each bit should be considered as a "usable" route within this subsystem.
                         '''
-                    always_present: true
-                    returns_getter: true
+                    returns_constant: XAP_ROUTE_QMK_CAPABILITIES
                     return_type: u32/bitmask
                 }
                 0x02: {

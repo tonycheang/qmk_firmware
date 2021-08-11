@@ -168,7 +168,6 @@
                         * Response:
                             * `u32` value.
                         '''
-                    always_present: true
                     returns_constant: XAP_BCD_VERSION
                     return_type: u32/bcd-version
                 }

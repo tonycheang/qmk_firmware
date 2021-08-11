@@ -22,8 +22,8 @@ typedef enum xap_route_type_t {
     XAP_UNUSED = 0,  // "Unused" needs to be zero -- undefined routes (through preprocessor) will be skipped
     XAP_ROUTE,
     XAP_EXECUTE,
-    XAP_VALUE,
-    XAP_GETTER,
+    XAP_VALUE_U32,
+    XAP_GETTER_U32,
     TOTAL_XAP_ROUTE_TYPES
 } xap_route_type_t;
 

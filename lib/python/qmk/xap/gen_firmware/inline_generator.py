@@ -126,6 +126,10 @@ def generate_inline(output_file):
 
     xap_generated_inl = '\n'.join(lines)
 
+    # Clean up newlines
+    while "\n\n\n" in xap_generated_inl:
+        xap_generated_inl = xap_generated_inl.replace("\n\n\n", "\n\n")
+
     if output_file:
         if output_file.name == '-':
             print(xap_generated_inl)
