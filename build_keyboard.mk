@@ -369,7 +369,7 @@ $(KEYMAP_OUTPUT)/src/xap_generated.inl: $(XAP_FILES)
 	$(QMK_BIN) xap-generate-qmk-inc -o "$(KEYMAP_OUTPUT)/src/xap_generated.inl"
 
 $(KEYMAP_OUTPUT)/src/xap_generated.h: $(XAP_FILES)
-	$(QMK_BIN) xap-generate-qmk-h -o "$(KEYMAP_OUTPUT)/src/xap_generated.h"
+	$(QMK_BIN) xap-generate-qmk-h -o "$(KEYMAP_OUTPUT)/src/xap_generated.h" -kb $(KEYBOARD)
 
 generated-files: $(KEYMAP_OUTPUT)/src/info_json_gz.h $(KEYMAP_OUTPUT)/src/xap_generated.inl $(KEYMAP_OUTPUT)/src/xap_generated.h
 

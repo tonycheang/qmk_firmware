@@ -16,8 +16,9 @@ def xap_generate_qmk_inc(cli):
 
 
 @cli.argument('-o', '--output', type=normpath, help='File to write to')
+@cli.argument('-kb', '--keyboard', help='Name of the keyboard')
 @cli.subcommand('Generates the XAP protocol include.', hidden=False if cli.config.user.developer else True)
 def xap_generate_qmk_h(cli):
     """Generates the XAP protocol header file, generated during normal build.
     """
-    generate_header(cli.args.output)
+    generate_header(cli.args.output, cli.args.keyboard)

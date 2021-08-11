@@ -168,6 +168,34 @@
                     returns_getter: true
                     return_type: u32/bitmask
                 }
+                0x02: {
+                    type: command
+                    name: Board identifiers
+                    define: BOARD_IDENTIFIERS
+                    description:
+                        '''
+                        Retrieves the set of identifying information for the board.
+                        '''
+                    return_type: struct
+                    struct_members: [
+                        {
+                            type: u16
+                            name: Vendor ID
+                        },
+                        {
+                            type: u16
+                            name: Product ID
+                        },
+                        {
+                            type: u16
+                            name: Product Version
+                        },
+                        {
+                            type: u64
+                            name: QMK Unique Identifier
+                        }
+                    ]
+                }
             }
         },
 
