@@ -107,8 +107,8 @@ def generate_header(output_file, keyboard):
     lines.append(f'#define XAP_BCD_VERSION 0x{int(b.group(1)):02d}{int(b.group(2)):02d}{int(b.group(3)):04d}ul')
     b = prog.match(get_git_version())
     lines.append(f'#define QMK_BCD_VERSION 0x{int(b.group(1)):02d}{int(b.group(2)):02d}{int(b.group(3)):04d}ul')
-    keyboard_id = pyhash.metro_64()(keyboard)
-    lines.append(f'#define XAP_KEYBOARD_IDENTIFIER 0x{keyboard_id}ull')
+    keyboard_id = pyhash.mum_64()(keyboard)
+    lines.append(f'#define XAP_KEYBOARD_IDENTIFIER 0x{keyboard_id:016X}ull')
     lines.append('')
 
     # Append the route and command defines
