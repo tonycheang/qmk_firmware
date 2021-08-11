@@ -7,6 +7,7 @@ from qmk.commands import get_git_version
 from qmk.xap.common import latest_xap_defs
 from qmk.constants import GPL2_HEADER_C_LIKE, GENERATED_HEADER_C_LIKE
 
+
 def _route_conditions(route_stack):
     conditions = []
     for route in route_stack:
@@ -18,6 +19,7 @@ def _route_conditions(route_stack):
 
     return "(" + ' && '.join([f'({c})' for c in conditions]) + ")"
 
+
 def _append_route_defines(lines, container, route_stack=[]):
     for route_id in container['routes']:
         route = container['routes'][route_id]
@@ -27,6 +29,7 @@ def _append_route_defines(lines, container, route_stack=[]):
         if 'routes' in route:
             _append_route_defines(lines, route, route_stack)
         route_stack.pop()
+
 
 def _append_route_masks(lines, container, route_stack=[]):
     for route_id in container['routes']:
@@ -52,6 +55,7 @@ def _append_route_masks(lines, container, route_stack=[]):
 
         route_stack.pop()
 
+
 def _append_route_capabilities_masks(lines, container, route_stack=[]):
     for route_id in container['routes']:
         route = container['routes'][route_id]
@@ -59,6 +63,7 @@ def _append_route_capabilities_masks(lines, container, route_stack=[]):
         route_name = '_'.join([r['define'] for r in route_stack])
         lines.append(f'  | (XAP_ROUTE_{route_name}_MASK) \\')
         route_stack.pop()
+
 
 def _append_route_capabilities(lines, container, route_stack=[]):
     for route_id in container['routes']:
@@ -78,6 +83,7 @@ def _append_route_capabilities(lines, container, route_stack=[]):
             _append_route_capabilities(lines, route, route_stack)
 
         route_stack.pop()
+
 
 def generate_header(output_file, keyboard):
     """Generates the XAP protocol header file, generated during normal build.
