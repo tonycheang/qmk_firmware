@@ -168,7 +168,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 void oled_render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
-    switch (layer_state) {
+    switch (get_highest_layer(layer_state)) {
         case L_BASE:
             oled_write_ln_P(PSTR("Base"), false);
             break;
@@ -190,6 +190,11 @@ void oled_render_layer_state(void) {
         case L_FVIM:
             oled_write_ln_P(PSTR("Forward Vim"), false);
             break;
+        case L_MISC:
+            oled_write_ln_P(PSTR("LEDs & Fn"), false);
+            break;
+        default:
+            oled_write_ln_P(PSTR("Unknown"), false);
     }
 }
 
