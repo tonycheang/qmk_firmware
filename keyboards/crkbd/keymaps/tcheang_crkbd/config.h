@@ -33,10 +33,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef TAPPING_TERM
 #define TAPPING_TERM 150
 #undef DEBOUNCE
-#define DEBOUNCE 5
+#define DEBOUNCE 10
 
 #define PERMISSIVE_HOLD
-/* #define IGNORE_MOD_TAP_INTERRUPT */
+#define IGNORE_MOD_TAP_INTERRUPT
+
+#define RGBLIGHT_SPLIT
+#define RGBLIGHT_SLEEP
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLED_NUM
