@@ -6,3 +6,5 @@
 
 #undef DEBOUNCE
 #define DEBOUNCE 5
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
