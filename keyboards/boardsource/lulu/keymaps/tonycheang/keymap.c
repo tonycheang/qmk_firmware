@@ -268,7 +268,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case MCRO_TMUX_PANE:
       if (record->event.pressed) {
-        SEND_STRING(SS_LCTL("a") SS_DELAY(50) SS_LCTL("c"));
+        SEND_STRING(SS_LCTL("a") SS_DELAY(50) "c");
       }
       break;
 
