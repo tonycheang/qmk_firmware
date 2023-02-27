@@ -62,10 +62,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
  [_DVORAK] = LAYOUT(
-  _______,         KC_1,          KC_2,           KC_3,            KC_4,            KC_5,                       KC_6,             KC_7,            KC_8,            KC_9,           KC_0,           MO(_MISC),
-  KC_TAB,          KC_QUOT,       KC_COMM,        KC_DOT,          KC_P,            KC_Y,                       KC_F,             KC_G,            KC_C,            KC_R,           KC_L,           OSL(_LSYM),
-  OSL(_RSYM),      LCTL_T(KC_A),  LALT_T(KC_O),   LCMD_T(KC_E),    KC_U,            KC_I,                       KC_D,             KC_H,            RCMD_T(KC_T),    RALT_T(KC_N),   RCTL_T(KC_S),   KC_ENT,
-  OSM(MOD_LSFT),   KC_COLON,     KC_Q,           LT(_BVIM, KC_J), LT(_FVIM, KC_K), KC_X, _______,    _______,  LT(_BVIM, KC_B),  LT(_FVIM, KC_M), KC_W,            KC_V,           KC_Z,           OSM(MOD_RSFT),
+  _______,         KC_1,          KC_2,           KC_3,            KC_4,            KC_5,                       KC_6, KC_7,            KC_8,            KC_9,           KC_0,           MO(_MISC),
+  KC_TAB,          KC_QUOT,       KC_COMM,        KC_DOT,          KC_P,            KC_Y,                       KC_F, KC_G,            KC_C,            KC_R,           KC_L,           OSL(_LSYM),
+  OSL(_RSYM),      LCTL_T(KC_A),  LALT_T(KC_O),   LCMD_T(KC_E),    KC_U,            KC_I,                       KC_D, KC_H,            RCMD_T(KC_T),    RALT_T(KC_N),   RCTL_T(KC_S),   KC_ENT,
+  OSM(MOD_LSFT),   KC_COLON,     KC_Q,           LT(_BVIM, KC_J), LT(_FVIM, KC_K), KC_X, _______,    _______,   KC_B, LT(_BVIM, KC_M), LT(_FVIM, KC_W), KC_V,           KC_Z,           OSM(MOD_RSFT),
                                                       KC_LBRC,  KC_RBRC, LT(_NUM, KC_ESC), KC_SPC,          KC_BSPC, OSL(_NAV), KC_DELETE, TG(_QWERTY)
 ),
 
@@ -172,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |  ]e  |      |      |-------.    ,-------|      |      |      |      |      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |      |  [q  |  ]]  |  ]]  |      |-------|    |-------|      |  ]M  |  ]m  |      |  ]z  |      |
+ * |      |      |  [q  |  ][  |  ]]  |      |-------|    |-------|      |  ]M  |  ]m  |      |  ]z  |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |      | /       /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
